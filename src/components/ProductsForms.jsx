@@ -36,13 +36,13 @@ const ProductsForms = ({ categories, setProducts }) => {
       >
         <div>
           <label htmlFor='product-title' className='block mb-1 text-slate-400'>
-            product title
+            Product title
           </label>
           <input
             type='text'
             name='title'
             id='product-title'
-            placeholder='product title...'
+            placeholder='Product title...'
             className='bg-transparent rounded-xl border border-slate-500 text-slate-400 w-full'
             onChange={changeHandler}
             value={productsFormData.title}
@@ -50,13 +50,13 @@ const ProductsForms = ({ categories, setProducts }) => {
         </div>
         <div>
           <label htmlFor='quantity' className='block mb-1 text-slate-400'>
-            quantity
+            Quantity
           </label>
           <input
             type='number'
             name='quantity'
             id='quantity'
-            placeholder='quantity'
+            placeholder='Quantity...'
             className='bg-transparent rounded-xl border border-slate-500 text-slate-400 w-full'
             onChange={changeHandler}
             value={productsFormData.quantity}
@@ -67,7 +67,7 @@ const ProductsForms = ({ categories, setProducts }) => {
             htmlFor='product-category'
             className='block mb-1 text-slate-400'
           >
-            category
+            Category
           </label>
           <select
             value={productsFormData.categoryId}
@@ -76,18 +76,15 @@ const ProductsForms = ({ categories, setProducts }) => {
             id='product-category'
             className='w-full bg-transparent rounded-xl border border-slate-500 text-slate-400 '
           >
-            <option
-              value=''
-              //  className='bg-slate-500 text-slate-300 w-32 '
-            >
-              select a category
+            <option value='' className='bg-slate-500 text-slate-300'>
+              Select a category...
             </option>
             {categories.map((category) => {
               return (
                 <option
                   key={category.id}
-                  //   className='bg-slate-500 text-slate-300'
                   value={category.id}
+                  className='bg-slate-500 text-slate-300'
                 >
                   {category.title}
                 </option>

@@ -14,8 +14,10 @@ const ProductList = ({ products, categories, setProducts }) => {
   };
 
   return (
-    <div>
-      <h2> Product List </h2>
+    <div className='my-5'>
+      {products.length && (
+        <h2 className='text-xl text-slate-300 font-bold mb-2'>Product List</h2>
+      )}
       <div className='overflow-x-auto'>
         {products.map((product) => {
           return (
@@ -38,7 +40,7 @@ const ProductList = ({ products, categories, setProducts }) => {
                   onClick={() => deleteProduct(product.id)}
                   className='delete-product border px-2 py-0.5 rounded-2xl border-red-400 text-red-400'
                 >
-                  delete
+                  Delete
                 </button>
               </div>
             </div>

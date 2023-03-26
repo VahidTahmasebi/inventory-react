@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const CategoryForm = ({ setCategories }) => {
+const CategoryForm = ({ categories, setCategories }) => {
   const [isShow, setIsShow] = useState(false);
 
   const [categoryFormData, setCategoryFormData] = useState({
@@ -8,7 +8,7 @@ const CategoryForm = ({ setCategories }) => {
     description: '',
   });
 
-  //   Receive comparisons
+  // Receive comparisons
   const changeHandler = (e) => {
     const { name, value } = e.target;
     setCategoryFormData({ ...categoryFormData, [name]: value });
@@ -17,17 +17,19 @@ const CategoryForm = ({ setCategories }) => {
   const AddNewCategoryHandler = (e) => {
     e.preventDefault();
 
-    // Send values in state
-    setCategories((prevState) => [
-      ...prevState,
-      {
-        ...categoryFormData,
-        createAt: new Date().toISOString(),
-        id: new Date().getTime(),
-      },
-    ]);
-    // emptying the state
-    setCategoryFormData({ title: '', description: '' });
+    if (categoryFormData.title) {
+      // Send values in state
+      setCategories((prevState) => [
+        ...prevState,
+        {
+          ...categoryFormData,
+          createAt: new Date().toISOString(),
+          id: new Date().getTime(),
+        },
+      ]);
+      // emptying the state
+      setCategoryFormData({ title: '', description: '' });
+    }
   };
 
   return (
@@ -42,7 +44,7 @@ const CategoryForm = ({ setCategories }) => {
               htmlFor='category-title'
               className='block mb-1 text-slate-400'
             >
-              title
+              Title
             </label>
             <input
               type='text'
@@ -58,7 +60,7 @@ const CategoryForm = ({ setCategories }) => {
               htmlFor='category-description'
               className='block mb-1 text-slate-400'
             >
-              description
+              Description
             </label>
             <textarea
               type='text'

@@ -87,7 +87,7 @@ const App = () => {
   return (
     <div>
       <div className='bg-slate-800 min-h-screen overflow-auto h-screen'>
-        <Navbar />
+        <Navbar products={products} />
         <div className='container max-w-screen-sm mx-auto'>
           <CategoryForm setCategories={setCategories} />
           <ProductsForms categories={categories} setProducts={setProducts} />

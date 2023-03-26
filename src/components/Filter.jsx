@@ -13,12 +13,13 @@ const Filter = ({
     <div>
       <div className='flex items-center justify-between mb-6'>
         <label htmlFor='search-input' className='text-slate-400 text-lg'>
-          search
+          Search
         </label>
         <input
           type='text'
           name='search-input'
           id='search-input'
+          placeholder='Search title...'
           className='bg-transparent rounded-xl border border-slate-500 text-slate-400'
           value={searchValue}
           onChange={onSearch}
@@ -26,7 +27,7 @@ const Filter = ({
       </div>
       <div className='flex items-center justify-between'>
         <label htmlFor='sort-products' className='text-slate-400'>
-          sort
+          Sort
         </label>
         <select
           name='sort-products'
@@ -36,29 +37,29 @@ const Filter = ({
           onChange={sortHandler}
         >
           <option className='bg-slate-500 text-slate-300' value=''>
-            select a category
+            Select a category
           </option>
           <option className='bg-slate-500 text-slate-300' value='latest'>
-            latest
+            Latest
           </option>
           <option className='bg-slate-500 text-slate-300' value='earliest'>
-            earliest
+            Earliest
           </option>
         </select>
       </div>
       <div className='flex items-center justify-between'>
-        <label htmlFor='sort-products' className='text-slate-400'>
-          category
+        <label htmlFor='category-products' className='text-slate-400'>
+          Category
         </label>
         <select
-          name='sort-products'
-          id='sort-products'
+          name='category-products'
+          id='category-products'
           className='bg-transparent rounded-xl border border-slate-500 text-slate-400 mb-4'
           value={selectedCategory}
           onChange={onSelectCategory}
         >
           <option className='bg-slate-500 text-slate-300' value=''>
-            all
+            All
           </option>
           {categories.map((category) => {
             return (
