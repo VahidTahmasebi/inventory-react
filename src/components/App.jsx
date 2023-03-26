@@ -1,9 +1,12 @@
 import React from 'react';
+import Navbar from './Navbar';
 
 const App = () => {
   return (
     <div>
-      <h1>Hello</h1>
+      <div className='bg-slate-800 min-h-screen overflow-auto h-screen'>
+        <Navbar />
+      </div>
     </div>
   );
 };
