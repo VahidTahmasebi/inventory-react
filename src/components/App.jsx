@@ -23,6 +23,28 @@ const App = () => {
     setFilteredProducts(result);
   }, [products, sort, searchValue, selectedCategory]);
 
+  // Get values ​​from local
+  useEffect(() => {
+    const savedProducts = JSON.parse(localStorage.getItem('products')) || [];
+    const savedCategories =
+      JSON.parse(localStorage.getItem('categories')) || [];
+
+    setProducts(savedProducts);
+    setCategories(savedCategories);
+  }, []);
+
+  // Set products values ​​locally
+  useEffect(() => {
+    if (products.length)
+      localStorage.setItem('products', JSON.stringify(products));
+  }, [products]);
+
+  // Set categories values ​​locally
+  useEffect(() => {
+    if (categories.length)
+      localStorage.setItem('categories', JSON.stringify(categories));
+  }, [categories]);
+
   // Receive sort value
   const sortHandler = (e) => {
     setSort(e.target.value);
