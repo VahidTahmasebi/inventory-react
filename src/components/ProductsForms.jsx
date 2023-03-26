@@ -14,19 +14,22 @@ const ProductsForms = ({ categories, setProducts }) => {
 
   const addProductForm = (e) => {
     e.preventDefault();
-    // Send values in state
-    setProducts((prevState) => [
-      ...prevState,
-      {
-        ...productsFormData,
-        createAt: new Date().toISOString(),
-        id: new Date().getTime(),
-      },
-    ]);
-    // emptying the state
-    setProductsFormData({ title: '', quantity: false, categoryId: '' });
-  };
 
+    if (productsFormData.title) {
+      // Send values in state
+      setProducts((prevState) => [
+        ...prevState,
+        {
+          ...productsFormData,
+          createAt: new Date().toISOString(),
+          id: new Date().getTime(),
+        },
+      ]);
+      // emptying the state
+      setProductsFormData({ title: '', quantity: false, categoryId: '' });
+    }
+  };
+  
   return (
     <div className='mb-6'>
       <h2 className='text-xl text-slate-300 font-bold mb-2'>Add New Product</h2>

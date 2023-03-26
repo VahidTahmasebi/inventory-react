@@ -36,9 +36,6 @@ const Filter = ({
           value={sort}
           onChange={sortHandler}
         >
-          <option className='bg-slate-500 text-slate-300' value=''>
-            Select a category
-          </option>
           <option className='bg-slate-500 text-slate-300' value='latest'>
             Latest
           </option>
