@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CategoryForm from './CategoryForm';
 import Navbar from './Navbar';
+import ProductList from './ProductList';
 import ProductsForms from './ProductsForms';
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
         <div className='container max-w-screen-sm mx-auto'>
           <CategoryForm setCategories={setCategories} />
           <ProductsForms categories={categories} setProducts={setProducts} />
+          <ProductList categories={categories} setProducts={setProducts} />
         </div>
       </div>
     </div>
