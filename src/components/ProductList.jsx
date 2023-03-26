@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductList = ({ categories, setProducts }) => {
+const ProductList = ({ products, categories, setProducts }) => {
   // Get category text
   const findCategory = (categoryId) => {
     console.log(categoryId);
