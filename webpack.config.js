@@ -46,8 +46,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Change Title in Webpack Config',
-      favicon: '',
+      title: 'Inventory',
       filename: 'index.html',
       template: './src/index.html',
     }),
