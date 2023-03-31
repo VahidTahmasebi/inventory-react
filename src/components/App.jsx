@@ -88,7 +88,7 @@ const App = () => {
     <div>
       <div className='bg-slate-800 min-h-screen overflow-auto h-screen'>
         <Navbar products={products} />
-        <div className='container max-w-screen-sm mx-auto'>
+        <div className='container max-w-screen-sm mx-auto px-3'>
           <CategoryForm setCategories={setCategories} />
           <ProductsForms categories={categories} setProducts={setProducts} />
           <Filter
